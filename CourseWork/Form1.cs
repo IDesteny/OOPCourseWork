@@ -128,11 +128,12 @@ namespace CourseWork
 				{
 					var queryResult =
 						from participant in await ReadParticipant()
-						where !string.IsNullOrEmpty(form2.GetSpeciality) ? participant.speciality == form2.GetSpeciality : true && !string.IsNullOrEmpty(form2.GetSubject) ? participant.subject == form2.GetSubject : true
+						where
+							!string.IsNullOrEmpty(form2.GetSpeciality) ? participant.speciality == form2.GetSpeciality : true &&
+							!string.IsNullOrEmpty(form2.GetSubject) ? participant.subject == form2.GetSubject : true
 						select participant;
 
 					DisplayData(queryResult.ToList());
-				
 				}
 			}
 		}
