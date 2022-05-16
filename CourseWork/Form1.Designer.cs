@@ -81,16 +81,16 @@ namespace CourseWork
 			this.RegistrationOfParticipants.Location = new System.Drawing.Point(4, 22);
 			this.RegistrationOfParticipants.Name = "RegistrationOfParticipants";
 			this.RegistrationOfParticipants.Padding = new System.Windows.Forms.Padding(3);
-			this.RegistrationOfParticipants.Size = new System.Drawing.Size(836, 373);
+			this.RegistrationOfParticipants.Size = new System.Drawing.Size(718, 342);
 			this.RegistrationOfParticipants.TabIndex = 3;
 			this.RegistrationOfParticipants.Text = "Регистрация";
 			this.RegistrationOfParticipants.UseVisualStyleBackColor = true;
 			// 
 			// label7
 			// 
-			this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(260, 234);
+			this.label7.Location = new System.Drawing.Point(219, 226);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(60, 13);
 			this.label7.TabIndex = 14;
@@ -98,9 +98,9 @@ namespace CourseWork
 			// 
 			// label5
 			// 
-			this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(260, 207);
+			this.label5.Location = new System.Drawing.Point(219, 199);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(65, 13);
 			this.label5.TabIndex = 13;
@@ -108,22 +108,22 @@ namespace CourseWork
 			// 
 			// Category
 			// 
-			this.Category.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Category.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Category.FormattingEnabled = true;
 			this.Category.Items.AddRange(new object[] {
             "Участник",
             "Гость"});
-			this.Category.Location = new System.Drawing.Point(352, 234);
+			this.Category.Location = new System.Drawing.Point(311, 226);
 			this.Category.Name = "Category";
 			this.Category.Size = new System.Drawing.Size(170, 21);
 			this.Category.TabIndex = 12;
-			this.Category.Click += new System.EventHandler(this.Category_Click);
+			this.Category.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// button1
 			// 
-			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.button1.BackColor = System.Drawing.Color.PeachPuff;
-			this.button1.Location = new System.Drawing.Point(263, 259);
+			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+			this.button1.Location = new System.Drawing.Point(222, 251);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(259, 26);
 			this.button1.TabIndex = 11;
@@ -133,9 +133,9 @@ namespace CourseWork
 			// 
 			// label6
 			// 
-			this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(260, 181);
+			this.label6.Location = new System.Drawing.Point(219, 173);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(57, 13);
 			this.label6.TabIndex = 10;
@@ -143,9 +143,9 @@ namespace CourseWork
 			// 
 			// label3
 			// 
-			this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(260, 155);
+			this.label3.Location = new System.Drawing.Point(219, 147);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(85, 13);
 			this.label3.TabIndex = 9;
@@ -153,9 +153,9 @@ namespace CourseWork
 			// 
 			// label4
 			// 
-			this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(260, 129);
+			this.label4.Location = new System.Drawing.Point(219, 121);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(54, 13);
 			this.label4.TabIndex = 8;
@@ -163,9 +163,9 @@ namespace CourseWork
 			// 
 			// label2
 			// 
-			this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(260, 103);
+			this.label2.Location = new System.Drawing.Point(219, 95);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(56, 13);
 			this.label2.TabIndex = 7;
@@ -173,9 +173,9 @@ namespace CourseWork
 			// 
 			// label1
 			// 
-			this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(260, 77);
+			this.label1.Location = new System.Drawing.Point(219, 69);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(29, 13);
 			this.label1.TabIndex = 6;
@@ -183,62 +183,62 @@ namespace CourseWork
 			// 
 			// Post
 			// 
-			this.Post.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+			this.Post.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Post.FormattingEnabled = true;
 			this.Post.Items.AddRange(new object[] {
             "Студент",
             "Преподаватель",
             "Аспирант"});
-			this.Post.Location = new System.Drawing.Point(352, 207);
+			this.Post.Location = new System.Drawing.Point(311, 199);
 			this.Post.Name = "Post";
 			this.Post.Size = new System.Drawing.Size(170, 21);
 			this.Post.TabIndex = 5;
-			this.Post.Click += new System.EventHandler(this.Category_Click);
+			this.Post.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// Subject
 			// 
-			this.Subject.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.Subject.Location = new System.Drawing.Point(352, 181);
+			this.Subject.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Subject.Location = new System.Drawing.Point(311, 173);
 			this.Subject.Name = "Subject";
 			this.Subject.Size = new System.Drawing.Size(170, 20);
 			this.Subject.TabIndex = 4;
-			this.Subject.Click += new System.EventHandler(this.Category_Click);
+			this.Subject.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// Speciality
 			// 
-			this.Speciality.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.Speciality.Location = new System.Drawing.Point(352, 155);
+			this.Speciality.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Speciality.Location = new System.Drawing.Point(311, 147);
 			this.Speciality.Name = "Speciality";
 			this.Speciality.Size = new System.Drawing.Size(170, 20);
 			this.Speciality.TabIndex = 3;
-			this.Speciality.Click += new System.EventHandler(this.Category_Click);
+			this.Speciality.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// Lastname
 			// 
-			this.Lastname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.Lastname.Location = new System.Drawing.Point(352, 129);
+			this.Lastname.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Lastname.Location = new System.Drawing.Point(311, 121);
 			this.Lastname.Name = "Lastname";
 			this.Lastname.Size = new System.Drawing.Size(170, 20);
 			this.Lastname.TabIndex = 2;
-			this.Lastname.Click += new System.EventHandler(this.Category_Click);
+			this.Lastname.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// Surname
 			// 
-			this.Surname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.Surname.Location = new System.Drawing.Point(352, 103);
+			this.Surname.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Surname.Location = new System.Drawing.Point(311, 95);
 			this.Surname.Name = "Surname";
 			this.Surname.Size = new System.Drawing.Size(170, 20);
 			this.Surname.TabIndex = 1;
-			this.Surname.Click += new System.EventHandler(this.Category_Click);
+			this.Surname.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// Firstname
 			// 
-			this.Firstname.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-			this.Firstname.Location = new System.Drawing.Point(352, 77);
+			this.Firstname.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Firstname.Location = new System.Drawing.Point(311, 69);
 			this.Firstname.Name = "Firstname";
 			this.Firstname.Size = new System.Drawing.Size(170, 20);
 			this.Firstname.TabIndex = 0;
-			this.Firstname.Click += new System.EventHandler(this.Category_Click);
+			this.Firstname.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// tabControl1
 			// 
@@ -250,7 +250,7 @@ namespace CourseWork
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(844, 399);
+			this.tabControl1.Size = new System.Drawing.Size(726, 368);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage1
@@ -259,7 +259,7 @@ namespace CourseWork
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(836, 373);
+			this.tabPage1.Size = new System.Drawing.Size(718, 342);
 			this.tabPage1.TabIndex = 4;
 			this.tabPage1.Text = "Список всех участников";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -273,14 +273,14 @@ namespace CourseWork
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
-            this.columnHeader4,
             this.columnHeader5,
+            this.columnHeader4,
             this.columnHeader6,
             this.columnHeader7});
 			this.Display.HideSelection = false;
 			this.Display.Location = new System.Drawing.Point(3, 6);
 			this.Display.Name = "Display";
-			this.Display.Size = new System.Drawing.Size(827, 361);
+			this.Display.Size = new System.Drawing.Size(709, 330);
 			this.Display.TabIndex = 0;
 			this.Display.UseCompatibleStateImageBehavior = false;
 			this.Display.View = System.Windows.Forms.View.Details;
@@ -304,11 +304,13 @@ namespace CourseWork
 			// 
 			// columnHeader4
 			// 
+			this.columnHeader4.DisplayIndex = 3;
 			this.columnHeader4.Text = "Тематика";
 			this.columnHeader4.Width = 98;
 			// 
 			// columnHeader5
 			// 
+			this.columnHeader5.DisplayIndex = 4;
 			this.columnHeader5.Text = "Специальность";
 			this.columnHeader5.Width = 137;
 			// 
@@ -327,7 +329,7 @@ namespace CourseWork
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.ClientSize = new System.Drawing.Size(868, 423);
+			this.ClientSize = new System.Drawing.Size(750, 392);
 			this.Controls.Add(this.tabControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";

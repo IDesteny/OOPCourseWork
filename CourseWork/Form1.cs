@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections;
 using System.Drawing;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace CourseWork
 {
@@ -25,10 +25,7 @@ namespace CourseWork
 			public string rank;
 		}
 
-		public Form1()
-		{
-			InitializeComponent();
-		}
+		public Form1() => InitializeComponent();
 
 		async void WriteParticipant(Participant participant)
 		{
@@ -55,27 +52,18 @@ namespace CourseWork
 			}
 		}
 
-		bool CheckOnCorrectFields()
-		{
-			bool CheckOnCorrectTextBox(TextBox tb)
-			{
-				return !Regex.IsMatch(tb.Text, @"^[а-яa-z ]+$", RegexOptions.IgnoreCase) ? (tb.BackColor = Color.Red) != Color.Red : true;
-			}
-			
-			bool CheckOnCorrectComboBox(ComboBox cb)
-			{
-				return cb.SelectedItem is null ? (cb.BackColor = Color.Red) != Color.Red : true;
-			}
+		bool CheckOnCorrectTextBox(TextBox tb) => Regex.IsMatch(tb.Text, @"^\s*$") || !Regex.IsMatch(tb.Text, @"^[а-яА-Яa-zA-Z ]+$") ? (tb.BackColor = Color.Red) != Color.Red : true;
 
-			return
-				CheckOnCorrectTextBox(Firstname) &
-				CheckOnCorrectTextBox(Surname) &
-				CheckOnCorrectTextBox(Lastname) &
-				CheckOnCorrectTextBox(Speciality) &
-				CheckOnCorrectTextBox(Subject) &
-				CheckOnCorrectComboBox(Category) &
-				CheckOnCorrectComboBox(Post);
-		}
+		bool CheckOnCorrectComboBox(ComboBox cb) => cb.SelectedItem is null ? (cb.BackColor = Color.Red) != Color.Red : true;
+
+		bool CheckOnCorrectFields =>
+			CheckOnCorrectTextBox(Firstname) &
+			CheckOnCorrectTextBox(Surname) &
+			CheckOnCorrectTextBox(Lastname) &
+			CheckOnCorrectTextBox(Speciality) &
+			CheckOnCorrectTextBox(Subject) &
+			CheckOnCorrectComboBox(Category) &
+			CheckOnCorrectComboBox(Post);
 
 		void ClearAllField()
 		{
@@ -90,7 +78,7 @@ namespace CourseWork
 
 		void button1_Click(object sender, EventArgs e)
 		{
-			if (!CheckOnCorrectFields())
+			if (!CheckOnCorrectFields)
 			{
 				MessageBox.Show("Введите корректные данные");
 				return;
@@ -112,11 +100,11 @@ namespace CourseWork
 			ClearAllField();
 		}
 
-		async void Display_SelectedIndexChanged(object sender, EventArgs e)
+		void DisplayData(List<Participant> participants)
 		{
 			Display.Items.Clear();
 
-			foreach (var participant in await ReadParticipant())
+			foreach (var participant in participants)
 			{
 				var listViewItem = new ListViewItem(participant.name);
 				listViewItem.SubItems.Add(participant.surname);
@@ -130,29 +118,25 @@ namespace CourseWork
 			}
 		}
 
-		class ListViewItemComparer : IComparer
-		{
-			int col;
+		async void Display_SelectedIndexChanged(object sender, EventArgs e) => DisplayData(await ReadParticipant());
 
-			public ListViewItemComparer(int column)
+		async void Display_ColumnClick(object sender, ColumnClickEventArgs e)
+		{
+			using (var form2 = new Form2())
 			{
-				col = column;
+				if (form2.ShowDialog() == DialogResult.OK)
+				{
+					var queryResult =
+						from participant in await ReadParticipant()
+						where !string.IsNullOrEmpty(form2.GetSpeciality) ? participant.speciality == form2.GetSpeciality : true && !string.IsNullOrEmpty(form2.GetSubject) ? participant.subject == form2.GetSubject : true
+						select participant;
+
+					DisplayData(queryResult.ToList());
+				
+				}
 			}
-
-			public int Compare(object x, object y)
-			{
-				return string.Compare(((ListViewItem)x).SubItems[col].Text, ((ListViewItem)y).SubItems[col].Text);
-			}
 		}
 
-		void Display_ColumnClick(object sender, ColumnClickEventArgs e)
-		{
-			Display.ListViewItemSorter = new ListViewItemComparer(e.Column);
-		}
-
-		void Category_Click(object sender, EventArgs e)
-		{
-			((Control)sender).BackColor = Color.White;
-		}
+		void TextBox_Click(object sender, EventArgs e) => ((Control)sender).BackColor = Color.White;
 	}
 }
