@@ -99,6 +99,7 @@ namespace CourseWork
 			this.Controls.Add(this.Subject2);
 			this.Controls.Add(this.Speciality2);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MinimumSize = new System.Drawing.Size(373, 159);
 			this.Name = "Form2";
 			this.Text = "Фильтрация";
 			this.ResumeLayout(false);

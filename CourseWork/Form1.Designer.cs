@@ -49,11 +49,12 @@ namespace CourseWork
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.Display = new System.Windows.Forms.ListView();
+			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+			this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.RegistrationOfParticipants.SuspendLayout();
@@ -81,7 +82,7 @@ namespace CourseWork
 			this.RegistrationOfParticipants.Location = new System.Drawing.Point(4, 22);
 			this.RegistrationOfParticipants.Name = "RegistrationOfParticipants";
 			this.RegistrationOfParticipants.Padding = new System.Windows.Forms.Padding(3);
-			this.RegistrationOfParticipants.Size = new System.Drawing.Size(718, 342);
+			this.RegistrationOfParticipants.Size = new System.Drawing.Size(807, 440);
 			this.RegistrationOfParticipants.TabIndex = 3;
 			this.RegistrationOfParticipants.Text = "Регистрация";
 			this.RegistrationOfParticipants.UseVisualStyleBackColor = true;
@@ -90,7 +91,7 @@ namespace CourseWork
 			// 
 			this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(219, 226);
+			this.label7.Location = new System.Drawing.Point(263, 275);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(60, 13);
 			this.label7.TabIndex = 14;
@@ -100,7 +101,7 @@ namespace CourseWork
 			// 
 			this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(219, 199);
+			this.label5.Location = new System.Drawing.Point(263, 248);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(65, 13);
 			this.label5.TabIndex = 13;
@@ -109,11 +110,12 @@ namespace CourseWork
 			// Category
 			// 
 			this.Category.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Category.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.Category.FormattingEnabled = true;
 			this.Category.Items.AddRange(new object[] {
             "Участник",
             "Гость"});
-			this.Category.Location = new System.Drawing.Point(311, 226);
+			this.Category.Location = new System.Drawing.Point(355, 275);
 			this.Category.Name = "Category";
 			this.Category.Size = new System.Drawing.Size(170, 21);
 			this.Category.TabIndex = 12;
@@ -123,7 +125,7 @@ namespace CourseWork
 			// 
 			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.button1.Location = new System.Drawing.Point(222, 251);
+			this.button1.Location = new System.Drawing.Point(266, 300);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(259, 26);
 			this.button1.TabIndex = 11;
@@ -135,7 +137,7 @@ namespace CourseWork
 			// 
 			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(219, 173);
+			this.label6.Location = new System.Drawing.Point(263, 222);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(57, 13);
 			this.label6.TabIndex = 10;
@@ -145,7 +147,7 @@ namespace CourseWork
 			// 
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(219, 147);
+			this.label3.Location = new System.Drawing.Point(263, 196);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(85, 13);
 			this.label3.TabIndex = 9;
@@ -155,7 +157,7 @@ namespace CourseWork
 			// 
 			this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(219, 121);
+			this.label4.Location = new System.Drawing.Point(263, 170);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(54, 13);
 			this.label4.TabIndex = 8;
@@ -165,7 +167,7 @@ namespace CourseWork
 			// 
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(219, 95);
+			this.label2.Location = new System.Drawing.Point(263, 144);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(56, 13);
 			this.label2.TabIndex = 7;
@@ -175,7 +177,7 @@ namespace CourseWork
 			// 
 			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(219, 69);
+			this.label1.Location = new System.Drawing.Point(263, 118);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(29, 13);
 			this.label1.TabIndex = 6;
@@ -184,12 +186,13 @@ namespace CourseWork
 			// Post
 			// 
 			this.Post.Anchor = System.Windows.Forms.AnchorStyles.None;
+			this.Post.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.Post.FormattingEnabled = true;
 			this.Post.Items.AddRange(new object[] {
             "Студент",
             "Преподаватель",
             "Аспирант"});
-			this.Post.Location = new System.Drawing.Point(311, 199);
+			this.Post.Location = new System.Drawing.Point(355, 248);
 			this.Post.Name = "Post";
 			this.Post.Size = new System.Drawing.Size(170, 21);
 			this.Post.TabIndex = 5;
@@ -198,7 +201,7 @@ namespace CourseWork
 			// Subject
 			// 
 			this.Subject.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Subject.Location = new System.Drawing.Point(311, 173);
+			this.Subject.Location = new System.Drawing.Point(355, 222);
 			this.Subject.Name = "Subject";
 			this.Subject.Size = new System.Drawing.Size(170, 20);
 			this.Subject.TabIndex = 4;
@@ -207,7 +210,7 @@ namespace CourseWork
 			// Speciality
 			// 
 			this.Speciality.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Speciality.Location = new System.Drawing.Point(311, 147);
+			this.Speciality.Location = new System.Drawing.Point(355, 196);
 			this.Speciality.Name = "Speciality";
 			this.Speciality.Size = new System.Drawing.Size(170, 20);
 			this.Speciality.TabIndex = 3;
@@ -216,7 +219,7 @@ namespace CourseWork
 			// Lastname
 			// 
 			this.Lastname.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Lastname.Location = new System.Drawing.Point(311, 121);
+			this.Lastname.Location = new System.Drawing.Point(355, 170);
 			this.Lastname.Name = "Lastname";
 			this.Lastname.Size = new System.Drawing.Size(170, 20);
 			this.Lastname.TabIndex = 2;
@@ -225,7 +228,7 @@ namespace CourseWork
 			// Surname
 			// 
 			this.Surname.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Surname.Location = new System.Drawing.Point(311, 95);
+			this.Surname.Location = new System.Drawing.Point(355, 144);
 			this.Surname.Name = "Surname";
 			this.Surname.Size = new System.Drawing.Size(170, 20);
 			this.Surname.TabIndex = 1;
@@ -234,7 +237,7 @@ namespace CourseWork
 			// Firstname
 			// 
 			this.Firstname.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Firstname.Location = new System.Drawing.Point(311, 69);
+			this.Firstname.Location = new System.Drawing.Point(355, 118);
 			this.Firstname.Name = "Firstname";
 			this.Firstname.Size = new System.Drawing.Size(170, 20);
 			this.Firstname.TabIndex = 0;
@@ -247,10 +250,11 @@ namespace CourseWork
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.RegistrationOfParticipants);
 			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.ItemSize = new System.Drawing.Size(77, 18);
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
 			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(726, 368);
+			this.tabControl1.Size = new System.Drawing.Size(815, 466);
 			this.tabControl1.TabIndex = 0;
 			// 
 			// tabPage1
@@ -259,7 +263,7 @@ namespace CourseWork
 			this.tabPage1.Location = new System.Drawing.Point(4, 22);
 			this.tabPage1.Name = "tabPage1";
 			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(718, 342);
+			this.tabPage1.Size = new System.Drawing.Size(807, 440);
 			this.tabPage1.TabIndex = 4;
 			this.tabPage1.Text = "Список всех участников";
 			this.tabPage1.UseVisualStyleBackColor = true;
@@ -270,6 +274,7 @@ namespace CourseWork
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.Display.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader8,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
@@ -278,14 +283,19 @@ namespace CourseWork
             this.columnHeader6,
             this.columnHeader7});
 			this.Display.HideSelection = false;
-			this.Display.Location = new System.Drawing.Point(3, 6);
+			this.Display.Location = new System.Drawing.Point(6, 6);
 			this.Display.Name = "Display";
-			this.Display.Size = new System.Drawing.Size(709, 330);
+			this.Display.Size = new System.Drawing.Size(795, 428);
 			this.Display.TabIndex = 0;
 			this.Display.UseCompatibleStateImageBehavior = false;
 			this.Display.View = System.Windows.Forms.View.Details;
 			this.Display.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.Display_ColumnClick);
 			this.Display.VisibleChanged += new System.EventHandler(this.Display_SelectedIndexChanged);
+			// 
+			// columnHeader8
+			// 
+			this.columnHeader8.Text = "ID";
+			this.columnHeader8.Width = 27;
 			// 
 			// columnHeader1
 			// 
@@ -302,34 +312,32 @@ namespace CourseWork
 			this.columnHeader3.Text = "Отчество";
 			this.columnHeader3.Width = 77;
 			// 
-			// columnHeader4
-			// 
-			this.columnHeader4.DisplayIndex = 3;
-			this.columnHeader4.Text = "Тематика";
-			this.columnHeader4.Width = 98;
-			// 
 			// columnHeader5
 			// 
-			this.columnHeader5.DisplayIndex = 4;
 			this.columnHeader5.Text = "Специальность";
-			this.columnHeader5.Width = 137;
+			this.columnHeader5.Width = 108;
+			// 
+			// columnHeader4
+			// 
+			this.columnHeader4.Text = "Тематика";
+			this.columnHeader4.Width = 96;
 			// 
 			// columnHeader6
 			// 
 			this.columnHeader6.Text = "Должность";
-			this.columnHeader6.Width = 101;
+			this.columnHeader6.Width = 90;
 			// 
 			// columnHeader7
 			// 
 			this.columnHeader7.Text = "Категория";
-			this.columnHeader7.Width = 143;
+			this.columnHeader7.Width = 103;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-			this.ClientSize = new System.Drawing.Size(750, 392);
+			this.ClientSize = new System.Drawing.Size(839, 490);
 			this.Controls.Add(this.tabControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
@@ -370,6 +378,7 @@ namespace CourseWork
 		private System.Windows.Forms.ColumnHeader columnHeader5;
 		private System.Windows.Forms.ColumnHeader columnHeader6;
 		private System.Windows.Forms.ColumnHeader columnHeader7;
+		private System.Windows.Forms.ColumnHeader columnHeader8;
 	}
 }
 
