@@ -91,9 +91,10 @@ namespace CourseWork
 			// 
 			this.label7.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(263, 275);
+			this.label7.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label7.Location = new System.Drawing.Point(252, 277);
 			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(60, 13);
+			this.label7.Size = new System.Drawing.Size(62, 15);
 			this.label7.TabIndex = 14;
 			this.label7.Text = "Категория";
 			// 
@@ -101,9 +102,10 @@ namespace CourseWork
 			// 
 			this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(263, 248);
+			this.label5.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label5.Location = new System.Drawing.Point(248, 250);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(65, 13);
+			this.label5.Size = new System.Drawing.Size(66, 15);
 			this.label5.TabIndex = 13;
 			this.label5.Text = "Должность";
 			// 
@@ -115,20 +117,21 @@ namespace CourseWork
 			this.Category.Items.AddRange(new object[] {
             "Участник",
             "Гость"});
-			this.Category.Location = new System.Drawing.Point(355, 275);
+			this.Category.Location = new System.Drawing.Point(320, 275);
 			this.Category.Name = "Category";
 			this.Category.Size = new System.Drawing.Size(170, 21);
-			this.Category.TabIndex = 12;
+			this.Category.TabIndex = 11;
 			this.Category.Click += new System.EventHandler(this.TextBox_Click);
 			// 
 			// button1
 			// 
 			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-			this.button1.Location = new System.Drawing.Point(266, 300);
+			this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.button1.Location = new System.Drawing.Point(320, 300);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(259, 26);
-			this.button1.TabIndex = 11;
+			this.button1.Size = new System.Drawing.Size(170, 26);
+			this.button1.TabIndex = 12;
 			this.button1.Text = "Зарегистрироваться";
 			this.button1.UseVisualStyleBackColor = false;
 			this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -137,9 +140,10 @@ namespace CourseWork
 			// 
 			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
-			this.label6.Location = new System.Drawing.Point(263, 222);
+			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label6.Location = new System.Drawing.Point(257, 224);
 			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(57, 13);
+			this.label6.Size = new System.Drawing.Size(57, 15);
 			this.label6.TabIndex = 10;
 			this.label6.Text = "Тематика";
 			// 
@@ -147,9 +151,10 @@ namespace CourseWork
 			// 
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(263, 196);
+			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label3.Location = new System.Drawing.Point(228, 196);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(85, 13);
+			this.label3.Size = new System.Drawing.Size(88, 15);
 			this.label3.TabIndex = 9;
 			this.label3.Text = "Специальность";
 			// 
@@ -157,9 +162,10 @@ namespace CourseWork
 			// 
 			this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(263, 170);
+			this.label4.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label4.Location = new System.Drawing.Point(257, 172);
 			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(54, 13);
+			this.label4.Size = new System.Drawing.Size(57, 15);
 			this.label4.TabIndex = 8;
 			this.label4.Text = "Отчество";
 			// 
@@ -167,9 +173,10 @@ namespace CourseWork
 			// 
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(263, 144);
+			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label2.Location = new System.Drawing.Point(259, 146);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(56, 13);
+			this.label2.Size = new System.Drawing.Size(55, 15);
 			this.label2.TabIndex = 7;
 			this.label2.Text = "Фамилия";
 			// 
@@ -177,9 +184,10 @@ namespace CourseWork
 			// 
 			this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(263, 118);
+			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+			this.label1.Location = new System.Drawing.Point(285, 120);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(29, 13);
+			this.label1.Size = new System.Drawing.Size(29, 15);
 			this.label1.TabIndex = 6;
 			this.label1.Text = "Имя";
 			// 
@@ -192,7 +200,7 @@ namespace CourseWork
             "Студент",
             "Преподаватель",
             "Аспирант"});
-			this.Post.Location = new System.Drawing.Point(355, 248);
+			this.Post.Location = new System.Drawing.Point(320, 248);
 			this.Post.Name = "Post";
 			this.Post.Size = new System.Drawing.Size(170, 21);
 			this.Post.TabIndex = 5;
@@ -201,7 +209,7 @@ namespace CourseWork
 			// Subject
 			// 
 			this.Subject.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Subject.Location = new System.Drawing.Point(355, 222);
+			this.Subject.Location = new System.Drawing.Point(320, 222);
 			this.Subject.Name = "Subject";
 			this.Subject.Size = new System.Drawing.Size(170, 20);
 			this.Subject.TabIndex = 4;
@@ -210,7 +218,7 @@ namespace CourseWork
 			// Speciality
 			// 
 			this.Speciality.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Speciality.Location = new System.Drawing.Point(355, 196);
+			this.Speciality.Location = new System.Drawing.Point(320, 196);
 			this.Speciality.Name = "Speciality";
 			this.Speciality.Size = new System.Drawing.Size(170, 20);
 			this.Speciality.TabIndex = 3;
@@ -219,7 +227,7 @@ namespace CourseWork
 			// Lastname
 			// 
 			this.Lastname.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Lastname.Location = new System.Drawing.Point(355, 170);
+			this.Lastname.Location = new System.Drawing.Point(320, 170);
 			this.Lastname.Name = "Lastname";
 			this.Lastname.Size = new System.Drawing.Size(170, 20);
 			this.Lastname.TabIndex = 2;
@@ -228,7 +236,7 @@ namespace CourseWork
 			// Surname
 			// 
 			this.Surname.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Surname.Location = new System.Drawing.Point(355, 144);
+			this.Surname.Location = new System.Drawing.Point(320, 144);
 			this.Surname.Name = "Surname";
 			this.Surname.Size = new System.Drawing.Size(170, 20);
 			this.Surname.TabIndex = 1;
@@ -237,7 +245,7 @@ namespace CourseWork
 			// Firstname
 			// 
 			this.Firstname.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Firstname.Location = new System.Drawing.Point(355, 118);
+			this.Firstname.Location = new System.Drawing.Point(320, 118);
 			this.Firstname.Name = "Firstname";
 			this.Firstname.Size = new System.Drawing.Size(170, 20);
 			this.Firstname.TabIndex = 0;
