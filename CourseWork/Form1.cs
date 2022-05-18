@@ -26,36 +26,44 @@ namespace CourseWork
 			public string rank;
 		}
 
-		public Form1() => InitializeComponent();
+		public Form1()
+		{
+			using (var form4 = new Form4())
+			{
+				form4.ShowDialog();
+			}
 
-		async Task WriteParticipants(List<Participant> participants)
+			InitializeComponent();
+		}
+
+		async Task WriteToFile<T>(List<T> data)
 		{
 			using (var streamWriter = new StreamWriter(FILENAME, false))
 			{
-				await streamWriter.WriteAsync(JsonConvert.SerializeObject(participants));
+				await streamWriter.WriteAsync(await Task.Run(() => JsonConvert.SerializeObject(data)));
 			}	
 		}
 
-		async Task<List<Participant>> ReadParticipants()
+		async Task<List<T>> ReadFromFile<T>()
 		{
 			using (var streamReader = new StreamReader(FILENAME))
 			{
-				return await Task.Run(async () => JsonConvert.DeserializeObject<List<Participant>>(await streamReader.ReadToEndAsync()) ?? new List<Participant>());
+				return await Task.Run(async () => JsonConvert.DeserializeObject<List<T>>(await streamReader.ReadToEndAsync()) ?? new List<T>());
 			}
 		}
 
-		async Task AddParticipants(Participant participant)
+		async Task AddToFile<T>(T data)
 		{
-			var participants = await ReadParticipants();
-			participants.Add(participant);
-			await WriteParticipants(participants);
+			var datas = await ReadFromFile<T>();
+			datas.Add(data);
+			await WriteToFile(datas);
 		}
 
-		async Task DeleteParticipantsAt(int index)
+		async Task DeleteFromFileAt<T>(int index)
 		{
-			var participants = await ReadParticipants();
-			participants.RemoveAt(index);
-			await WriteParticipants(participants);
+			var datas = await ReadFromFile<T>();
+			datas.RemoveAt(index);
+			await WriteToFile(datas);
 		}
 
 		bool CheckOnCorrectTextBox(TextBox tb) => !Regex.IsMatch(tb.Text, @"^\s*$") && Regex.IsMatch(tb.Text, @"^[а-яА-Яa-zA-Z ]+$") || (tb.BackColor = Color.Red) != Color.Red;
@@ -72,33 +80,28 @@ namespace CourseWork
 
 		void ClearAllField()
 		{
-			Firstname.Text = null;
-			Surname.Text = null;
-			Lastname.Text = null;
-			Speciality.Text = null;
-			Subject.Text = null;
-			Category.SelectedIndex = -1;
-			Post.SelectedIndex = -1;
+			Firstname.Text = Surname.Text = Lastname.Text = Speciality.Text = Subject.Text = null;
+			Category.SelectedIndex = Post.SelectedIndex = -1;
 		}
 
-		async void button1_Click(object sender, EventArgs e)
+		async void Button1_Click(object sender, EventArgs e)
 		{
 			if (!CheckOnCorrectFields)
 			{
 				MessageBox.Show("Введите корректные данные");
 				return;
 			}
-
-			Participant participant;
-			participant.name = Firstname.Text;
-			participant.surname = Surname.Text;
-			participant.lastname = Lastname.Text;
-			participant.speciality = Speciality.Text;
-			participant.subject = Subject.Text;
-			participant.position = Post.SelectedItem.ToString();
-			participant.rank = Category.SelectedItem.ToString();
-
-			await AddParticipants(participant);
+			
+			await AddToFile(new Participant
+			{
+				name = Firstname.Text,
+				surname = Surname.Text,
+				lastname = Lastname.Text,
+				speciality = Speciality.Text,
+				subject = Subject.Text,
+				position = Post.SelectedItem as string,
+				rank = Category.SelectedItem as string
+			});
 
 			MessageBox.Show("Пользователь зарегистрирован");
 
@@ -108,8 +111,8 @@ namespace CourseWork
 		void DisplayData(List<Participant> participants)
 		{
 			Display.Items.Clear();
-			var i = 0;
 
+			var i = 0;
 			foreach (var participant in participants)
 			{
 				var listViewItem = new ListViewItem(i.ToString());
@@ -126,18 +129,15 @@ namespace CourseWork
 			}
 		}
 
-		async void Display_SelectedIndexChanged(object sender, EventArgs e) => DisplayData(await ReadParticipants());
+		async void Display_SelectedIndexChanged(object sender, EventArgs e) => DisplayData(await ReadFromFile<Participant>());
 
 		class ListViewItemComparer : IComparer
 		{
-			readonly int col;
-
-			public ListViewItemComparer(int column) => col = column;
-
-			public int Compare(object x, object y) => string.Compare(((ListViewItem)x).SubItems[col].Text, ((ListViewItem)y).SubItems[col].Text);
+			public int column;
+			public int Compare(object x, object y) => string.Compare((x as ListViewItem).SubItems[column].Text, (y as ListViewItem).SubItems[column].Text);
 		}
 
-		void Display_ColumnClick(object sender, ColumnClickEventArgs e) => Display.ListViewItemSorter = new ListViewItemComparer(e.Column);
+		void Display_ColumnClick(object sender, ColumnClickEventArgs e) => Display.ListViewItemSorter = new ListViewItemComparer { column = e.Column };
 
 		async void ShowFilter()
 		{
@@ -146,7 +146,7 @@ namespace CourseWork
 				if (form2.ShowDialog() == DialogResult.OK)
 				{
 					var queryResult =
-						from participant in await ReadParticipants()
+						from participant in await ReadFromFile<Participant>()
 						where
 							!string.IsNullOrEmpty(form2.GetSpeciality) ? participant.speciality == form2.GetSpeciality : false ||
 							string.IsNullOrEmpty(form2.GetSubject) || participant.subject == form2.GetSubject
@@ -165,8 +165,8 @@ namespace CourseWork
 				{
 					try
 					{
-						await DeleteParticipantsAt(form3.GetDelIndex);
-						DisplayData(await ReadParticipants());
+						await DeleteFromFileAt<Participant>(form3.GetDelIndex);
+						DisplayData(await ReadFromFile<Participant>());
 					}
 					catch (ArgumentOutOfRangeException)
 					{
@@ -195,6 +195,6 @@ namespace CourseWork
 			return base.ProcessCmdKey(ref message, keys);
 		}
 
-		void TextBox_Click(object sender, EventArgs e) => ((Control)sender).BackColor = Color.White;
+		void TextBox_Click(object sender, EventArgs e) => (sender as Control).BackColor = Color.White;
 	}
 }

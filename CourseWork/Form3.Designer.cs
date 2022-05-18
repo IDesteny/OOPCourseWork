@@ -43,6 +43,7 @@ namespace CourseWork
 			this.DelIndex.Name = "DelIndex";
 			this.DelIndex.Size = new System.Drawing.Size(134, 20);
 			this.DelIndex.TabIndex = 1;
+			this.DelIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
 			// button1
 			// 
@@ -79,6 +80,7 @@ namespace CourseWork
 			this.Controls.Add(this.DelIndex);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form3";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "Удаление";
 			((System.ComponentModel.ISupportInitialize)(this.DelIndex)).EndInit();
 			this.ResumeLayout(false);

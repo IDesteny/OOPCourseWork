@@ -119,7 +119,7 @@ namespace CourseWork
             "Гость"});
 			this.Category.Location = new System.Drawing.Point(320, 275);
 			this.Category.Name = "Category";
-			this.Category.Size = new System.Drawing.Size(170, 21);
+			this.Category.Size = new System.Drawing.Size(170, 23);
 			this.Category.TabIndex = 11;
 			this.Category.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -134,7 +134,7 @@ namespace CourseWork
 			this.button1.TabIndex = 12;
 			this.button1.Text = "Зарегистрироваться";
 			this.button1.UseVisualStyleBackColor = false;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.button1.Click += new System.EventHandler(this.Button1_Click);
 			// 
 			// label6
 			// 
@@ -202,7 +202,7 @@ namespace CourseWork
             "Аспирант"});
 			this.Post.Location = new System.Drawing.Point(320, 248);
 			this.Post.Name = "Post";
-			this.Post.Size = new System.Drawing.Size(170, 21);
+			this.Post.Size = new System.Drawing.Size(170, 23);
 			this.Post.TabIndex = 5;
 			this.Post.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -211,7 +211,7 @@ namespace CourseWork
 			this.Subject.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Subject.Location = new System.Drawing.Point(320, 222);
 			this.Subject.Name = "Subject";
-			this.Subject.Size = new System.Drawing.Size(170, 20);
+			this.Subject.Size = new System.Drawing.Size(170, 23);
 			this.Subject.TabIndex = 4;
 			this.Subject.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -220,7 +220,7 @@ namespace CourseWork
 			this.Speciality.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Speciality.Location = new System.Drawing.Point(320, 196);
 			this.Speciality.Name = "Speciality";
-			this.Speciality.Size = new System.Drawing.Size(170, 20);
+			this.Speciality.Size = new System.Drawing.Size(170, 23);
 			this.Speciality.TabIndex = 3;
 			this.Speciality.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -229,7 +229,7 @@ namespace CourseWork
 			this.Lastname.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Lastname.Location = new System.Drawing.Point(320, 170);
 			this.Lastname.Name = "Lastname";
-			this.Lastname.Size = new System.Drawing.Size(170, 20);
+			this.Lastname.Size = new System.Drawing.Size(170, 23);
 			this.Lastname.TabIndex = 2;
 			this.Lastname.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -238,7 +238,7 @@ namespace CourseWork
 			this.Surname.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Surname.Location = new System.Drawing.Point(320, 144);
 			this.Surname.Name = "Surname";
-			this.Surname.Size = new System.Drawing.Size(170, 20);
+			this.Surname.Size = new System.Drawing.Size(170, 23);
 			this.Surname.TabIndex = 1;
 			this.Surname.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -247,7 +247,7 @@ namespace CourseWork
 			this.Firstname.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.Firstname.Location = new System.Drawing.Point(320, 118);
 			this.Firstname.Name = "Firstname";
-			this.Firstname.Size = new System.Drawing.Size(170, 20);
+			this.Firstname.Size = new System.Drawing.Size(170, 23);
 			this.Firstname.TabIndex = 0;
 			this.Firstname.Click += new System.EventHandler(this.TextBox_Click);
 			// 
@@ -258,6 +258,7 @@ namespace CourseWork
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.RegistrationOfParticipants);
 			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tabControl1.ItemSize = new System.Drawing.Size(77, 18);
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
 			this.tabControl1.Name = "tabControl1";
@@ -349,6 +350,7 @@ namespace CourseWork
 			this.Controls.Add(this.tabControl1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "Form1";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Конференция";
 			this.RegistrationOfParticipants.ResumeLayout(false);
 			this.RegistrationOfParticipants.PerformLayout();
