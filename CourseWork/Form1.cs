@@ -86,26 +86,26 @@ namespace CourseWork
 
 		async void Button1_Click(object sender, EventArgs e)
 		{
-			if (!CheckOnCorrectFields)
+			if (CheckOnCorrectFields)
 			{
-				MessageBox.Show("Введите корректные данные");
+				await AddToFile(new Participant
+				{
+					name = Firstname.Text,
+					surname = Surname.Text,
+					lastname = Lastname.Text,
+					speciality = Speciality.Text,
+					subject = Subject.Text,
+					position = Post.SelectedItem as string,
+					rank = Category.SelectedItem as string
+				});
+
+				ClearAllField();
+
+				MessageBox.Show("Пользователь зарегистрирован");
 				return;
 			}
-			
-			await AddToFile(new Participant
-			{
-				name = Firstname.Text,
-				surname = Surname.Text,
-				lastname = Lastname.Text,
-				speciality = Speciality.Text,
-				subject = Subject.Text,
-				position = Post.SelectedItem as string,
-				rank = Category.SelectedItem as string
-			});
 
-			MessageBox.Show("Пользователь зарегистрирован");
-
-			ClearAllField();
+			MessageBox.Show("Введите корректные данные");
 		}
 
 		void DisplayData(List<Participant> participants)
@@ -178,7 +178,7 @@ namespace CourseWork
 
 		protected override bool ProcessCmdKey(ref Message message, Keys keys)
 		{
-			if (tabControl1.SelectedIndex == 1)
+			if (tabControl1.SelectedTab == ListOfAllParticipants)
 			{
 				switch (keys)
 				{

@@ -47,7 +47,7 @@ namespace CourseWork
 			this.Surname = new System.Windows.Forms.TextBox();
 			this.Firstname = new System.Windows.Forms.TextBox();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.ListOfAllParticipants = new System.Windows.Forms.TabPage();
 			this.Display = new System.Windows.Forms.ListView();
 			this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -59,7 +59,7 @@ namespace CourseWork
 			this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
 			this.RegistrationOfParticipants.SuspendLayout();
 			this.tabControl1.SuspendLayout();
-			this.tabPage1.SuspendLayout();
+			this.ListOfAllParticipants.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// RegistrationOfParticipants
@@ -257,7 +257,7 @@ namespace CourseWork
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.tabControl1.Controls.Add(this.RegistrationOfParticipants);
-			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.ListOfAllParticipants);
 			this.tabControl1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.tabControl1.ItemSize = new System.Drawing.Size(77, 18);
 			this.tabControl1.Location = new System.Drawing.Point(12, 12);
@@ -266,16 +266,16 @@ namespace CourseWork
 			this.tabControl1.Size = new System.Drawing.Size(815, 466);
 			this.tabControl1.TabIndex = 0;
 			// 
-			// tabPage1
+			// ListOfAllParticipants
 			// 
-			this.tabPage1.Controls.Add(this.Display);
-			this.tabPage1.Location = new System.Drawing.Point(4, 22);
-			this.tabPage1.Name = "tabPage1";
-			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-			this.tabPage1.Size = new System.Drawing.Size(807, 440);
-			this.tabPage1.TabIndex = 4;
-			this.tabPage1.Text = "Список всех участников";
-			this.tabPage1.UseVisualStyleBackColor = true;
+			this.ListOfAllParticipants.Controls.Add(this.Display);
+			this.ListOfAllParticipants.Location = new System.Drawing.Point(4, 22);
+			this.ListOfAllParticipants.Name = "ListOfAllParticipants";
+			this.ListOfAllParticipants.Padding = new System.Windows.Forms.Padding(3);
+			this.ListOfAllParticipants.Size = new System.Drawing.Size(807, 440);
+			this.ListOfAllParticipants.TabIndex = 4;
+			this.ListOfAllParticipants.Text = "Список всех участников";
+			this.ListOfAllParticipants.UseVisualStyleBackColor = true;
 			// 
 			// Display
 			// 
@@ -355,7 +355,7 @@ namespace CourseWork
 			this.RegistrationOfParticipants.ResumeLayout(false);
 			this.RegistrationOfParticipants.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
-			this.tabPage1.ResumeLayout(false);
+			this.ListOfAllParticipants.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}
@@ -379,7 +379,7 @@ namespace CourseWork
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.TabPage ListOfAllParticipants;
 		private System.Windows.Forms.ListView Display;
 		private System.Windows.Forms.ColumnHeader columnHeader1;
 		private System.Windows.Forms.ColumnHeader columnHeader2;
