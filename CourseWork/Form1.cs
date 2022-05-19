@@ -28,6 +28,14 @@ namespace CourseWork
 
 		public Form1()
 		{
+			Task.Run(() =>
+			{
+				if (!File.Exists(FILENAME))
+				{
+					File.Create(FILENAME);
+				}
+			});
+
 			using (var form4 = new Form4())
 			{
 				form4.ShowDialog();
