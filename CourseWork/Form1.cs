@@ -28,13 +28,7 @@ namespace CourseWork
 
 		public Form1()
 		{
-			Task.Run(() =>
-			{
-				if (!File.Exists(FILENAME))
-				{
-					File.Create(FILENAME);
-				}
-			});
+			Task.Run(() => File.Open(FILENAME, FileMode.OpenOrCreate).Close());
 
 			using (var form4 = new Form4())
 			{
@@ -88,7 +82,7 @@ namespace CourseWork
 
 		void ClearAllField()
 		{
-			Firstname.Text = Surname.Text = Lastname.Text = Speciality.Text = Subject.Text = null;
+			Firstname.Text = Surname.Text = Lastname.Text = Speciality.Text = Subject.Text = default;
 			Category.SelectedIndex = Post.SelectedIndex = -1;
 		}
 
