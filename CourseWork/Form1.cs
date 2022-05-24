@@ -149,9 +149,8 @@ namespace CourseWork
 				{
 					var queryResult =
 						from participant in await ReadFromFile<Participant>()
-						where
-							!string.IsNullOrEmpty(form2.GetSpeciality) ? participant.speciality == form2.GetSpeciality : false ||
-							string.IsNullOrEmpty(form2.GetSubject) || participant.subject == form2.GetSubject
+						where string.IsNullOrEmpty(form2.GetSpeciality) || participant.speciality == form2.GetSpeciality
+						where string.IsNullOrEmpty(form2.GetSubject) || participant.subject == form2.GetSubject
 						select participant;
 
 					DisplayData(queryResult.ToList());
