@@ -11,25 +11,33 @@ using System.Text.RegularExpressions;
 
 namespace CourseWork
 {
+	/// <summary>
+	/// Класс мэйн формы
+	/// </summary>
 	public partial class Form1 : Form
 	{
+		/// <summary>
+		/// Имя "бд"
+		/// </summary>
 		const string FILENAME = "Participants.json";
 		
 		struct Participant
 		{
-			public string name;
-			public string surname;
-			public string lastname;
-			public string speciality;
-			public string subject;
-			public string position;
-			public string rank;
+			public string name;			// Имя
+			public string surname;		// Фамилия
+			public string lastname;		// Отчество 
+			public string speciality;	// Специальность
+			public string subject;		// Тематика
+			public string position;		// Должность
+			public string rank;           // Категория
 		}
 
 		public Form1()
 		{
+			// Создать бд если ее нет
 			Task.Run(() => File.Open(FILENAME, FileMode.OpenOrCreate).Close());
 
+			// Показать превью
 			using (var form4 = new Form4())
 			{
 				form4.ShowDialog();
@@ -38,6 +46,12 @@ namespace CourseWork
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// Записать данные в файл
+		/// </summary>
+		/// <typeparam name="T"> Тип хранящийся в списке </typeparam>
+		/// <param name="data"> Данные для занесения </param>
+		/// <returns> Таск </returns>
 		async Task WriteToFile<T>(List<T> data)
 		{
 			using (var streamWriter = new StreamWriter(FILENAME, false))
@@ -46,6 +60,11 @@ namespace CourseWork
 			}	
 		}
 
+		/// <summary>
+		/// Прочитать данные из файла
+		/// </summary>
+		/// <typeparam name="T"> Тип хранящийся в списке </typeparam>
+		/// <returns> Полученные данные </returns>
 		async Task<List<T>> ReadFromFile<T>()
 		{
 			using (var streamReader = new StreamReader(FILENAME))
@@ -54,6 +73,12 @@ namespace CourseWork
 			}
 		}
 
+		/// <summary>
+		/// Добавить в файл
+		/// </summary>
+		/// <typeparam name="T"> Тип данных для занесения </typeparam>
+		/// <param name="data"> Данные для занесения </param>
+		/// <returns> Таск </returns>
 		async Task AddToFile<T>(T data)
 		{
 			var datas = await ReadFromFile<T>();
@@ -61,6 +86,12 @@ namespace CourseWork
 			await WriteToFile(datas);
 		}
 
+		/// <summary>
+		/// Удалить из файла по индексу
+		/// </summary>
+		/// <typeparam name="T"> Тип удаляемых данных </typeparam>
+		/// <param name="index"> Индекс в списке </param>
+		/// <returns> Таск </returns>
 		async Task DeleteFromFileAt<T>(int index)
 		{
 			var datas = await ReadFromFile<T>();
@@ -68,9 +99,23 @@ namespace CourseWork
 			await WriteToFile(datas);
 		}
 
+		/// <summary>
+		/// Проверка на корректность TextBox поля
+		/// </summary>
+		/// <param name="tb"> TextBox поле </param>
+		/// <returns> true - если корректный, иначе false </returns>
 		bool CheckOnCorrectTextBox(TextBox tb) => !Regex.IsMatch(tb.Text, @"^\s*$") && Regex.IsMatch(tb.Text, @"^[а-яА-Яa-zA-Z ]+$") || (tb.BackColor = Color.Red) != Color.Red;
+
+		/// <summary>
+		/// Проверка на корректность ComboBox поля
+		/// </summary>
+		/// <param name="cb"> ComboBox поле </param>
+		/// <returns> true - если корректный, иначе false </returns>
 		bool CheckOnCorrectComboBox(ComboBox cb) => !(cb.SelectedItem is null) || (cb.BackColor = Color.Red) != Color.Red;
 
+		/// <summary>
+		/// Проверка на корректность всех полей
+		/// </summary>
 		bool CheckOnCorrectFields =>
 			CheckOnCorrectTextBox(Firstname) &
 			CheckOnCorrectTextBox(Surname) &
@@ -80,12 +125,20 @@ namespace CourseWork
 			CheckOnCorrectComboBox(Category) &
 			CheckOnCorrectComboBox(Post);
 
+		/// <summary>
+		/// Очистить все поля
+		/// </summary>
 		void ClearAllField()
 		{
 			Firstname.Text = Surname.Text = Lastname.Text = Speciality.Text = Subject.Text = default;
 			Category.SelectedIndex = Post.SelectedIndex = -1;
 		}
 
+		/// <summary>
+		/// Колбэк добавления данных в файл
+		/// </summary>
+		/// <param name="sender"> Объект вызвавший колбэк </param>
+		/// <param name="e"> Событие при котором было вызванно </param>
 		async void Button1_Click(object sender, EventArgs e)
 		{
 			if (CheckOnCorrectFields)
@@ -110,11 +163,15 @@ namespace CourseWork
 			MessageBox.Show("Введите корректные данные");
 		}
 
+		/// <summary>
+		/// Отобразать всё содержимое в Display
+		/// </summary>
+		/// <param name="participants"> Учасники для отображения </param>
 		void DisplayData(List<Participant> participants)
 		{
 			Display.Items.Clear();
 
-			var i = 0;
+			var i = 0; // ID
 			foreach (var participant in participants)
 			{
 				var listViewItem = new ListViewItem(i.ToString());
@@ -131,16 +188,42 @@ namespace CourseWork
 			}
 		}
 
-		async void Display_SelectedIndexChanged(object sender, EventArgs e) => DisplayData(await ReadFromFile<Participant>());
+		/// <summary>
+		/// Отобразить всё содержимое при открытии Display
+		/// </summary>
+		/// <param name="sender"> Объект вызвавший колбэк </param>
+		/// <param name="e"> Событие при котором было вызванно </param>
+		async void Display_VisibleChanged(object sender, EventArgs e) => DisplayData(await ReadFromFile<Participant>());
 
+		/// <summary>
+		/// Компоратор для сортировки полей Display
+		/// </summary>
 		class ListViewItemComparer : IComparer
 		{
+			/// <summary>
+			/// ID сортируемой колонки
+			/// </summary>
 			public int column;
+
+			/// <summary>
+			/// Компоратор
+			/// </summary>
+			/// <param name="x"></param>
+			/// <param name="y"></param>
+			/// <returns></returns>
 			public int Compare(object x, object y) => string.Compare((x as ListViewItem).SubItems[column].Text, (y as ListViewItem).SubItems[column].Text);
 		}
 
+		/// <summary>
+		/// Отсортировать по нажатой колонке
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		void Display_ColumnClick(object sender, ColumnClickEventArgs e) => Display.ListViewItemSorter = new ListViewItemComparer { column = e.Column };
 
+		/// <summary>
+		/// Отобразить форму фильтрации
+		/// </summary>
 		async void ShowFilter()
 		{
 			using (var form2 = new Form2())
@@ -153,11 +236,15 @@ namespace CourseWork
 						where string.IsNullOrEmpty(form2.GetSubject) || participant.subject == form2.GetSubject
 						select participant;
 
+					// Обновить содержимое
 					DisplayData(queryResult.ToList());
 				}
 			}
 		}
 
+		/// <summary>
+		/// Отобразить форму удаления
+		/// </summary>
 		async void ShowDelete()
 		{
 			using (var form3 = new Form3())
@@ -167,6 +254,8 @@ namespace CourseWork
 					try
 					{
 						await DeleteFromFileAt<Participant>(form3.GetDelIndex);
+
+						// Обновить содержимое
 						DisplayData(await ReadFromFile<Participant>());
 					}
 					catch (ArgumentOutOfRangeException)
@@ -177,9 +266,15 @@ namespace CourseWork
 			}
 		}
 
+		/// <summary>
+		/// Колбэк на нажатия
+		/// </summary>
+		/// <param name="message"></param>
+		/// <param name="keys"></param>
+		/// <returns></returns>
 		protected override bool ProcessCmdKey(ref Message message, Keys keys)
 		{
-			if (tabControl1.SelectedTab == ListOfAllParticipants)
+			if (tabControl1.SelectedTab == ListOfAllParticipants) // Если выбрана нужная вкладка
 			{
 				switch (keys)
 				{
@@ -188,7 +283,6 @@ namespace CourseWork
 						return true;
 
 					case Keys.Control | Keys.D:
-						ShowDelete();
 						return true;
 				}
 			}
@@ -196,6 +290,11 @@ namespace CourseWork
 			return base.ProcessCmdKey(ref message, keys);
 		}
 
+		/// <summary>
+		/// Очистка контрола от красного цвета
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		void TextBox_Click(object sender, EventArgs e) => (sender as Control).BackColor = Color.White;
 	}
 }

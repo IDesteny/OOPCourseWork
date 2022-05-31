@@ -299,7 +299,7 @@ namespace CourseWork
 			this.Display.UseCompatibleStateImageBehavior = false;
 			this.Display.View = System.Windows.Forms.View.Details;
 			this.Display.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.Display_ColumnClick);
-			this.Display.VisibleChanged += new System.EventHandler(this.Display_SelectedIndexChanged);
+			this.Display.VisibleChanged += new System.EventHandler(this.Display_VisibleChanged);
 			// 
 			// columnHeader8
 			// 

@@ -39,9 +39,9 @@ namespace CourseWork
 			// DelIndex
 			// 
 			this.DelIndex.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.DelIndex.Location = new System.Drawing.Point(110, 38);
+			this.DelIndex.Location = new System.Drawing.Point(100, 45);
 			this.DelIndex.Name = "DelIndex";
-			this.DelIndex.Size = new System.Drawing.Size(134, 20);
+			this.DelIndex.Size = new System.Drawing.Size(142, 20);
 			this.DelIndex.TabIndex = 1;
 			this.DelIndex.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
 			// 
@@ -51,9 +51,9 @@ namespace CourseWork
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
 			this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
 			this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(110, 64);
+			this.button1.Location = new System.Drawing.Point(100, 71);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(134, 23);
+			this.button1.Size = new System.Drawing.Size(142, 23);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "OK";
 			this.button1.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@ namespace CourseWork
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
 			this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-			this.label1.Location = new System.Drawing.Point(107, 22);
+			this.label1.Location = new System.Drawing.Point(97, 27);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(145, 15);
 			this.label1.TabIndex = 3;

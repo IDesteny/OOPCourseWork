@@ -40,7 +40,7 @@ namespace CourseWork
 			// Speciality2
 			// 
 			this.Speciality2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Speciality2.Location = new System.Drawing.Point(129, 22);
+			this.Speciality2.Location = new System.Drawing.Point(116, 25);
 			this.Speciality2.Name = "Speciality2";
 			this.Speciality2.Size = new System.Drawing.Size(162, 20);
 			this.Speciality2.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace CourseWork
 			// Subject2
 			// 
 			this.Subject2.Anchor = System.Windows.Forms.AnchorStyles.None;
-			this.Subject2.Location = new System.Drawing.Point(129, 48);
+			this.Subject2.Location = new System.Drawing.Point(116, 51);
 			this.Subject2.Name = "Subject2";
 			this.Subject2.Size = new System.Drawing.Size(162, 20);
 			this.Subject2.TabIndex = 1;
@@ -60,9 +60,9 @@ namespace CourseWork
 			this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
 			this.button1.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.button1.Location = new System.Drawing.Point(41, 74);
+			this.button1.Location = new System.Drawing.Point(116, 77);
 			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(250, 28);
+			this.button1.Size = new System.Drawing.Size(162, 28);
 			this.button1.TabIndex = 2;
 			this.button1.Text = "OK";
 			this.button1.UseVisualStyleBackColor = false;
@@ -73,7 +73,7 @@ namespace CourseWork
 			this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label3.Location = new System.Drawing.Point(38, 25);
+			this.label3.Location = new System.Drawing.Point(25, 28);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(88, 15);
 			this.label3.TabIndex = 10;
@@ -84,7 +84,7 @@ namespace CourseWork
 			this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label6.AutoSize = true;
 			this.label6.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label6.Location = new System.Drawing.Point(38, 51);
+			this.label6.Location = new System.Drawing.Point(53, 53);
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(57, 15);
 			this.label6.TabIndex = 11;
