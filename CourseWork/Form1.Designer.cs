@@ -121,7 +121,7 @@ namespace CourseWork
 			this.Category.Name = "Category";
 			this.Category.Size = new System.Drawing.Size(170, 23);
 			this.Category.TabIndex = 11;
-			this.Category.Click += new System.EventHandler(this.TextBox_Click);
+			this.Category.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// button1
 			// 
@@ -204,7 +204,7 @@ namespace CourseWork
 			this.Post.Name = "Post";
 			this.Post.Size = new System.Drawing.Size(170, 23);
 			this.Post.TabIndex = 5;
-			this.Post.Click += new System.EventHandler(this.TextBox_Click);
+			this.Post.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// Subject
 			// 
@@ -213,7 +213,7 @@ namespace CourseWork
 			this.Subject.Name = "Subject";
 			this.Subject.Size = new System.Drawing.Size(170, 23);
 			this.Subject.TabIndex = 4;
-			this.Subject.Click += new System.EventHandler(this.TextBox_Click);
+			this.Subject.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// Speciality
 			// 
@@ -222,7 +222,7 @@ namespace CourseWork
 			this.Speciality.Name = "Speciality";
 			this.Speciality.Size = new System.Drawing.Size(170, 23);
 			this.Speciality.TabIndex = 3;
-			this.Speciality.Click += new System.EventHandler(this.TextBox_Click);
+			this.Speciality.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// Lastname
 			// 
@@ -231,7 +231,7 @@ namespace CourseWork
 			this.Lastname.Name = "Lastname";
 			this.Lastname.Size = new System.Drawing.Size(170, 23);
 			this.Lastname.TabIndex = 2;
-			this.Lastname.Click += new System.EventHandler(this.TextBox_Click);
+			this.Lastname.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// Surname
 			// 
@@ -240,7 +240,7 @@ namespace CourseWork
 			this.Surname.Name = "Surname";
 			this.Surname.Size = new System.Drawing.Size(170, 23);
 			this.Surname.TabIndex = 1;
-			this.Surname.Click += new System.EventHandler(this.TextBox_Click);
+			this.Surname.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// Firstname
 			// 
@@ -249,7 +249,7 @@ namespace CourseWork
 			this.Firstname.Name = "Firstname";
 			this.Firstname.Size = new System.Drawing.Size(170, 23);
 			this.Firstname.TabIndex = 0;
-			this.Firstname.Click += new System.EventHandler(this.TextBox_Click);
+			this.Firstname.Enter += new System.EventHandler(this.Category_Enter);
 			// 
 			// tabControl1
 			// 

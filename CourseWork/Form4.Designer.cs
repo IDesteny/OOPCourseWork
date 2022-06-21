@@ -38,11 +38,13 @@ namespace CourseWork
 			this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.label2.Location = new System.Drawing.Point(175, 202);
+			this.label2.Location = new System.Drawing.Point(90, 206);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(457, 23);
+			this.label2.Size = new System.Drawing.Size(584, 46);
 			this.label2.TabIndex = 1;
-			this.label2.Text = "Курсовая работа Громова Ильи на тему \"Конференция\"";
+			this.label2.Text = "Курсовая работа Громова Ильи на тему \"Конференция\" по дисциплине\r\nОбъектно-ориент" +
+    "ированное программирование";
+			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label3
 			// 

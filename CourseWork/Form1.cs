@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+
+using System;
 using System.IO;
 using System.Linq;
 using System.Drawing;
-using Newtonsoft.Json;
 using System.Collections;
 using System.Windows.Forms;
 using System.Threading.Tasks;
@@ -267,6 +268,28 @@ namespace CourseWork
 		}
 
 		/// <summary>
+		/// Отобразить форму поиска
+		/// </summary>
+		async void ShowSearch()
+		{
+			using (var form5 = new Form5())
+			{
+				if (form5.ShowDialog() == DialogResult.OK)
+				{
+					try
+					{
+						// Создать список из одного эл-та
+						DisplayData(new List<Participant> { (await ReadFromFile<Participant>()).ElementAt(form5.GetSearchIndex) });
+					}
+					catch (ArgumentOutOfRangeException)
+					{
+						MessageBox.Show("Пользователя с таким ID не существует");
+					}
+				}
+			}
+		}
+
+		/// <summary>
 		/// Колбэк на нажатия
 		/// </summary>
 		/// <param name="message"></param>
@@ -283,6 +306,11 @@ namespace CourseWork
 						return true;
 
 					case Keys.Control | Keys.D:
+						ShowDelete();
+						return true;
+
+					case Keys.Control | Keys.S:
+						ShowSearch();
 						return true;
 				}
 			}
@@ -295,6 +323,6 @@ namespace CourseWork
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		void TextBox_Click(object sender, EventArgs e) => (sender as Control).BackColor = Color.White;
+		void Category_Enter(object sender, EventArgs e) => (sender as Control).BackColor = Color.White;
 	}
 }

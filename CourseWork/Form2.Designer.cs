@@ -44,7 +44,7 @@ namespace CourseWork
 			this.Speciality2.Name = "Speciality2";
 			this.Speciality2.Size = new System.Drawing.Size(162, 20);
 			this.Speciality2.TabIndex = 0;
-			this.Speciality2.Click += new System.EventHandler(this.TextBox_Click);
+			this.Speciality2.Enter += new System.EventHandler(this.Subject2_Enter);
 			// 
 			// Subject2
 			// 
@@ -53,7 +53,7 @@ namespace CourseWork
 			this.Subject2.Name = "Subject2";
 			this.Subject2.Size = new System.Drawing.Size(162, 20);
 			this.Subject2.TabIndex = 1;
-			this.Subject2.Click += new System.EventHandler(this.TextBox_Click);
+			this.Subject2.Enter += new System.EventHandler(this.Subject2_Enter);
 			// 
 			// button1
 			// 
@@ -102,6 +102,8 @@ namespace CourseWork
 			this.Controls.Add(this.Subject2);
 			this.Controls.Add(this.Speciality2);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.MinimumSize = new System.Drawing.Size(373, 159);
 			this.Name = "Form2";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
