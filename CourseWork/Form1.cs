@@ -22,7 +22,7 @@ namespace CourseWork
 		/// </summary>
 		const string FILENAME = "Participants.json";
 		
-		struct Participant
+		public struct Participant
 		{
 			public string name;			// Имя
 			public string surname;		// Фамилия
@@ -190,11 +190,19 @@ namespace CourseWork
 		}
 
 		/// <summary>
+		/// Отображение данных из бд
+		/// </summary>
+		async void UpdateData()
+		{
+			DisplayData(await ReadFromFile<Participant>());
+		}
+
+		/// <summary>
 		/// Отобразить всё содержимое при открытии Display
 		/// </summary>
 		/// <param name="sender"> Объект вызвавший колбэк </param>
 		/// <param name="e"> Событие при котором было вызванно </param>
-		async void Display_VisibleChanged(object sender, EventArgs e) => DisplayData(await ReadFromFile<Participant>());
+		void Display_VisibleChanged(object sender, EventArgs e) => UpdateData();
 
 		/// <summary>
 		/// Компоратор для сортировки полей Display
@@ -256,8 +264,7 @@ namespace CourseWork
 					{
 						await DeleteFromFileAt<Participant>(form3.GetDelIndex);
 
-						// Обновить содержимое
-						DisplayData(await ReadFromFile<Participant>());
+						UpdateData();
 					}
 					catch (ArgumentOutOfRangeException)
 					{
@@ -290,6 +297,57 @@ namespace CourseWork
 		}
 
 		/// <summary>
+		/// Отобразить форму редактирования
+		/// </summary>
+		async void ShowEditing()
+		{
+			using (var form6 = new Form6())
+			{
+				if (form6.ShowDialog() == DialogResult.OK)
+				{
+					var participant = await ReadFromFile<Participant>();
+					var delIndex = form6.GetEditIndex;
+
+					try
+					{
+						participant.RemoveAt(delIndex);
+					}
+					catch (ArgumentOutOfRangeException)
+					{
+						MessageBox.Show("Пользователя с таким ID не существует");
+						return;
+					}
+
+					participant.Insert(delIndex, new Participant
+					{
+						name = form6.GetFirstname,
+						surname = form6.GetSurname,
+						lastname = form6.GetLastname,
+						speciality = form6.GetSpeciality,
+						subject = form6.GetSubject,
+						position = form6.GetPost,
+						rank = form6.GetCategory
+					});
+
+					await WriteToFile(participant);
+					UpdateData();
+				}
+			}
+		}
+
+		/// <summary>
+		/// Отобразить модальное окно на подтверждение удаления данных из бд
+		/// </summary>
+		async void ShowRemove()
+		{
+			if (MessageBox.Show("Вы действительно хотите удалить всю информацию из базы данных?", "Внимание", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				await WriteToFile<Participant>(null);
+				UpdateData();
+			}
+		}
+
+		/// <summary>
 		/// Колбэк на нажатия
 		/// </summary>
 		/// <param name="message"></param>
@@ -311,6 +369,14 @@ namespace CourseWork
 
 					case Keys.Control | Keys.S:
 						ShowSearch();
+						return true;
+
+					case Keys.Control | Keys.E:
+						ShowEditing();
+						return true;
+
+					case Keys.Control | Keys.R:
+						ShowRemove();
 						return true;
 				}
 			}
